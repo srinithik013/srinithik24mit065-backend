@@ -1,0 +1,15 @@
+services:
+  - type: web
+    name: with-bliss-backend
+    env: python
+    region: singapore
+    plan: free
+    buildCommand: pip install -r requirements.txt && python seed.py
+    startCommand: gunicorn app:app --timeout 120
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.11.0
+      - key: USE_MYSQL
+        value: "false"
+      - key: FRONTEND_URL
+        value: "https://srinithimit065.web.app"

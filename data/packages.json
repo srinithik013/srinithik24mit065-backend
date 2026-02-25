@@ -1,0 +1,23 @@
+[
+  {
+    "_id": "1",
+    "name": "Royal Baby Shower",
+    "price": 20000,
+    "description": "Premium themed backdrop, pastel balloon decor, cradle decoration, and welcome banner.",
+    "image": "assets/baby-shower.jpg"
+  },
+  {
+    "_id": "2",
+    "name": "Magic Birthday Party",
+    "price": 15000,
+    "description": "Colorful balloon arch, personalized cake table setup, and party props for all ages.",
+    "image": "assets/birthday.jpg"
+  },
+  {
+    "_id": "3",
+    "name": "Grand Engagement",
+    "price": 35000,
+    "description": "Elegant floral stage backdrop, luxury LED lighting, and romantic table centerpieces.",
+    "image": "assets/engagement.jpg"
+  }
+]
