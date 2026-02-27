@@ -9,10 +9,9 @@ load_dotenv()
 
 app = Flask(__name__)
 
-# Allow requests from Firebase frontend and local development
+# Add CORS **immediately after creating app**
 CORS(app, origins=[
-    "https://srinithimit065.web.app",
-    "https://srinithimit065.firebaseapp.com",
+    "https://with-bliss-srinithik24mit065.web.app",#live frontend
     "http://localhost:8080",
     "http://127.0.0.1:8080",
     "http://localhost:5000",
@@ -100,6 +99,14 @@ class Gallery(db.Model):
     def to_dict(self):
         return {"_id": str(self.id), "title": self.title, "image_url": self.image_url, "category": self.category}
 
+
+# Create tables on startup (works with both gunicorn and direct run)
+with app.app_context():
+    try:
+        db.create_all()
+        print("Database tables initialized.")
+    except Exception as e:
+        print(f"DB init warning: {e}")
 
 # ===========================
 # HOME / HEALTH CHECK
