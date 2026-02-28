@@ -9,8 +9,8 @@ load_dotenv()
 
 app = Flask(__name__)
 
-# Add CORS **immediately after creating app**
-CORS(app, resources={r"/api/*": {"origins": "*"}})
+# Add CORS to ALL routes
+CORS(app)
 
 # === Database Configuration ===
 # Default to SQLite for easier local setup, switch to MySQL via .env if needed
