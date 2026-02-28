@@ -12,4 +12,4 @@ services:
       - key: USE_MYSQL
         value: "false"
       - key: FRONTEND_URL
-        value: "https://srinithimit065.web.app"
+        value: "https://with-bliss-srinithik24mit065.web.app"
