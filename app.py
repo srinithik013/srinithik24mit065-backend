@@ -10,16 +10,7 @@ load_dotenv()
 app = Flask(__name__)
 
 # Add CORS **immediately after creating app**
-CORS(app, origins=[
-    "https://with-bliss-srinithik24mit065.web.app",       # ✅ Primary live URL
-    "https://with-bliss-srinithik24mit065.firebaseapp.com", # Firebase alternate
-    "http://localhost:8080",
-    "http://127.0.0.1:8080",
-    "http://localhost:5500",
-    "http://127.0.0.1:5500",
-    "http://localhost:5000",
-    "http://127.0.0.1:5000"
-], supports_credentials=True)
+CORS(app, resources={r"/api/*": {"origins": "*"}})
 
 # === Database Configuration ===
 # Default to SQLite for easier local setup, switch to MySQL via .env if needed
